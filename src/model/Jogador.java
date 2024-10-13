@@ -124,10 +124,4 @@ public class Jogador extends Participante {
         }
     }
 
-
-    // Método para verificar se pode dar split (se as cartas da mão ativa são iguais)
-    public boolean podeFazerSplit() {
-        return ((MaoJogador) getMaoAtiva()).podeSplit();
-    }
-
 }
