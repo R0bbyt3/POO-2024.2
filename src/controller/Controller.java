@@ -92,22 +92,24 @@ public class Controller {
         maoJogador.setVisible(true);
         maoJogadorSplit.setVisible(true);
 
-        atribuirValoresAleatorios(maoDealer, maoJogador);
-        atribuirValoresAleatorios(maoDealer, maoJogadorSplit);
-    }
+     // Configurações para o Dealer
+        maoDealer.atualizarPontos(18);
+        maoDealer.receberCarta("2c");
+        maoDealer.receberCarta("kh");
 
-    private void atribuirValoresAleatorios(JanelaMao dealer, JanelaMaoJogador jogador) {
-        Random rand = new Random();
+        // Configurações para o Jogador Principal
+        maoJogador.atualizarPontos(15);
+        maoJogador.atualizarAposta(100);
+        maoJogador.atualizarDinheiro(900);
+        maoJogador.receberCarta("5h");
+        maoJogador.receberCarta("7d");
 
-        dealer.atualizarPontos(rand.nextInt(10) + 16);
-        dealer.receberCarta("2c");
-        dealer.receberCarta("kh");
-
-        jogador.atualizarPontos(rand.nextInt(10) + 12);
-        jogador.atualizarAposta(rand.nextInt(100) + 50);
-        jogador.atualizarDinheiro(1000 + rand.nextInt(500));
-        jogador.receberCarta("5h");
-        jogador.receberCarta("7d");
+        // Configurações para a Segunda Mão do Jogador (Split)
+        maoJogadorSplit.atualizarPontos(13);
+        maoJogadorSplit.atualizarAposta(50);
+        maoJogadorSplit.atualizarDinheiro(850);
+        maoJogadorSplit.receberCarta("9s");
+        maoJogadorSplit.receberCarta("3d");
     }
 
     public static void main(String[] args) {
